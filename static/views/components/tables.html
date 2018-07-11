@@ -640,48 +640,6 @@
 
 
 
-<div class="animated fadeIn" id="loadPermission111" style="display: none">
-  <!--<div class="">-->
-    <!--<div class="">-->
-      <!--<div class="tab-pane" id="loadPermissionTable" role="tabpanel">-->
-        <!--<div>-->
-          <!--&lt;!&ndash;<div class="card">&ndash;&gt;-->
-            <!--&lt;!&ndash;<div style="padding: 0.40rem 1.25rem;" class="card-header">&ndash;&gt;-->
-              <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
-                <!--&lt;!&ndash;<div  class="col-md-3 input-prepend input-group">&ndash;&gt;-->
-                  <!--&lt;!&ndash;<input class="form-control" size="16" type="text" placeholder="搜索" name="name" id="selectPermissionTable" autocomplete="off">&ndash;&gt;-->
-                  <!--&lt;!&ndash;<span class="input-group-addon" onclick="selectPermissionTable1()"><i class="fa fa-search"></i></span>&ndash;&gt;-->
-                  <!--&lt;!&ndash;<span class="input-group-addon" onclick="selectPermissionTable2()"><i class="fa fa-close"></i></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="col-md-9 input-prepend " style="text-align: right;padding: 0.40rem 1.25rem;">&ndash;&gt;-->
-
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-              <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="">&ndash;&gt;-->
-              <!--&lt;!&ndash;<table class="layui-hide" id="superPermissionTableModel" lay-data="{id: 'superPermissionTableModel'}" lay-filter="superPermissionTableModel"></table>&ndash;&gt;-->
-            <!--&lt;!&ndash;</div>&ndash;&gt;-->
-          <!--&lt;!&ndash;</div>&ndash;&gt;-->
-          <!--<div class="card">-->
-            <!--<div class="card-body">-->
-              <!--<div style="padding: 0.40rem 1.25rem;background: #f1f1f1;" class="card-header">-->
-                <!--<div class="row">-->
-                  <!--<div  class="col-md-3 input-prepend input-group">-->
-                    <!--<input class="form-control" size="16" type="text" placeholder="搜索" name="name" id="selectPermissionTable" autocomplete="off">-->
-                    <!--<span class="input-group-addon" onclick="selectPermissionTable1()"><i class="fa fa-search"></i></span>-->
-                    <!--<span class="input-group-addon" onclick="selectPermissionTable2()"><i class="fa fa-close"></i></span>-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</div>-->
-              <!--<table class="layui-hide" id="loadPermissionTableModel" lay-data="{id: 'loadPermissionTableModel'}" lay-filter="loadPermissionTableModel"></table>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-
-</div>
 <div class="animated fadeIn" id="loadPermission" style="display: none">
   <div class="">
     <div class="">
@@ -707,4 +665,122 @@
     </div>
   </div>
 
+</div>
+
+
+<div class="animated fadeIn" id="loadList" style="display: none">
+  <div class="">
+    <div class="">
+      <div class="tab-pane" id="loadList1" role="tabpanel">
+        <div>
+          <div class="card">
+            <div style="padding: 0.40rem 1.25rem;" class="card-header">
+              <div class="row">
+                <div  class="col-md-3 input-prepend input-group">
+                  <input class="form-control" size="16" type="text" placeholder="搜索" name="name" id="selectListTable" autocomplete="off">
+                  <span class="input-group-addon" onclick="fiterListModal()"><i class="fa fa-search"></i></span>
+                  <span class="input-group-addon" onclick="clearListModal()"><i class="fa fa-close"></i></span>
+                </div>
+                <div class="col-md-9 input-prepend " style="text-align: right;padding: 0.40rem 1.25rem;">
+                  <!--<button type="button" class="btn btn-danger btn-sm" onclick="newListAjax()">增加</button>-->
+                  <!--<button type="button" class="btn btn-danger btn-sm" onclick="newListAjax()">修改</button>-->
+                  <button  id="addListTempId1" type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#newList">新增</button>
+                  <button style="display: none" id="updateListTempId1" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#updateList">修改</button>
+                  <button type="button" class="btn btn-success btn-sm" onclick="updateListAjaxBefore()">修改</button>
+                  <button type="button" class="btn btn-warning btn-sm" onclick="deleteListAjax()">删除</button>
+                  <button type="button" class="btn btn-primary btn-sm" onclick="listModalReflash()">刷新</button>
+                </div>
+
+              </div>
+            </div>
+            <div class="card-body">
+              <table class="layui-hide" id="loadListTableModel" lay-data="{id: 'loadListTableModel'}" lay-filter="loadListTableModel"></table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="newList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">新建菜单</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="">
+            <div class="">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="newProcessName">菜单名称</label>
+                      <input type="text" class="form-control" id="newListName" placeholder="名称">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="newProcessDes">业务代码</label>
+                      <input type="text" class="form-control" id="newListCategory" placeholder="业务代码">
+                      <!--<textarea style="height: 300px" class="form-control" id="newListCategory" placeholder="名称"/>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="newListAjax()">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="updateList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">修改菜单</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="">
+            <div class="">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="newProcessName">菜单名称</label>
+                      <input type="text" class="form-control" id="updateListName" placeholder="名称">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <label for="newProcessDes">业务代码</label>
+                      <input type="text" class="form-control" id="updateListCategory" placeholder="业务代码">
+                      <!--<textarea style="height: 300px" class="form-control" id="updateListCategory" placeholder="名称"/>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="updateListAjax()">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

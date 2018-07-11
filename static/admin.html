@@ -30,8 +30,8 @@
   <input value="" type="button" id="getData2" style="display: none" onclick="loadDataRuleAjax()">
   <input value="" type="button" id="getData3" style="display: none" onclick="loadDataColorAjax()">
   <input value="" type="button" id="getData6" style="display: none" onclick="processDefineAjax()">
-  <input value="" type="button" id="getData4" style="display: none" onclick="permissionAjax()">
-  <input value="" type="button" id="getData5" style="display: none" >
+  <input value="" type="button" id="getData4" style="display: none" onclick="permissionAjax()" >
+  <input value="" type="button" id="getData5" style="display: none" onclick="ListAjax()">
 </li>
 </ul>
 <ul class="nav navbar-nav ml-auto">
@@ -59,7 +59,7 @@
 </li>
 <li class="nav-item nav-dropdown">
   <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> 流程管理</a>
-    <ul class="nav-dropdown-items">
+    <ul id="listParent" class="nav-dropdown-items">
         <!--<li class="nav-item nav-dropdown"  style="background:#33444c;" >-->
         <!--&lt;!&ndash;<a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> 住房公积金业务</a>&ndash;&gt;-->
         <!--<a style="margin-left: 9px;" id="processDesignAjaxMain" class="nav-link nav-dropdown-toggle" data-type="tabAdd" href="components/tables.html" lay-id="11"><i class="icon-pin"></i>住房公积金业务</a>-->
@@ -75,27 +75,27 @@
         <!--</li>-->
         <!--</ul>-->
         <!--</li>-->
-        <li class="nav-item">
-            <a style="margin-left: 9px;" id="processDesignAjaxMain" class="nav-link site-demo-active" data-type="tabAdd" href="components/tables.html" lay-id="11"><i class="icon-pin"></i>住房公积金业务</a>
-        </li>
-        <li class="nav-item">
-            <a style="margin-left: 9px;" id="processDesignAjaxMain4" class="nav-link " href="components/tables.html" lay-id="77"><i class="icon-pin"></i>归集业务</a>
-        </li>
-        <li class="nav-item">
-            <a style="margin-left: 9px;" id="processDesignAjaxMain5" class="nav-link "  href="components/tables.html" lay-id="88"><i class="icon-pin"></i>提取业务</a>
-        </li>
-        <li class="nav-item">
-            <a style="margin-left: 9px;" id="processDesignAjaxMain6" class="nav-link "  href="components/tables.html" lay-id="99"><i class="icon-pin"></i>个人贷款</a>
-        </li>
-        <li class="nav-item">
-            <a style="margin-left: 9px;" id="processDesignAjaxMain1" class="nav-link "  href="components/tables.html" lay-id="444"><i class="icon-pin"></i>资金管理</a>
-        </li>
-        <li class="nav-item">
-            <a style="margin-left: 9px;" id="processDesignAjaxMain2" class="nav-link "  href="components/tables.html" lay-id="55"><i class="icon-pin"></i>电子档案</a>
-        </li>
-        <li class="nav-item">
-            <a style="margin-left: 9px;" id="processDesignAjaxMain3" class="nav-link "  href="components/tables.html" lay-id="66"><i class="icon-pin"></i>财务管理</a>
-        </li>
+        <!--<li class="nav-item">-->
+            <!--<a style="margin-left: 9px;" id="processDesignAjaxMain" class="nav-link site-demo-active" data-type="tabAdd" href="components/tables.html" lay-id="11"><i class="icon-pin"></i>住房公积金业务</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item">-->
+            <!--<a style="margin-left: 9px;" id="processDesignAjaxMain4" class="nav-link " href="components/tables.html" lay-id="77"><i class="icon-pin"></i>归集业务</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item">-->
+            <!--<a style="margin-left: 9px;" id="processDesignAjaxMain5" class="nav-link "  href="components/tables.html" lay-id="88"><i class="icon-pin"></i>提取业务</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item">-->
+            <!--<a style="margin-left: 9px;" id="processDesignAjaxMain6" class="nav-link "  href="components/tables.html" lay-id="99"><i class="icon-pin"></i>贷款业务</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item">-->
+            <!--<a style="margin-left: 9px;" id="processDesignAjaxMain1" class="nav-link "  href="components/tables.html" lay-id="444"><i class="icon-pin"></i>资金管理</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item">-->
+            <!--<a style="margin-left: 9px;" id="processDesignAjaxMain2" class="nav-link "  href="components/tables.html" lay-id="55"><i class="icon-pin"></i>电子档案</a>-->
+        <!--</li>-->
+        <!--<li class="nav-item">-->
+            <!--<a style="margin-left: 9px;" id="processDesignAjaxMain3" class="nav-link "  href="components/tables.html" lay-id="66"><i class="icon-pin"></i>财务管理</a>-->
+        <!--</li>-->
     </ul>
 </li>
   <li class="nav-item">
@@ -107,6 +107,9 @@
   <li class="nav-item">
     <a class="nav-link site-demo-active" id="permissionAjaxMain" data-type="tabAdd" href="components/tablesPermission.html" lay-id="44"><i class="icon-layers"></i>用户权限管理</a>
   </li>
+    <li class="nav-item">
+        <a class="nav-link site-demo-active" id="listAjaxMain" data-type="tabAdd" href="components/tablesList.html" lay-id="551"><i class="icon-menu"></i>导航菜单管理</a>
+    </li>
 <li class="divider"></li>
 </ul>
 </nav>
@@ -117,7 +120,7 @@
 <ol class="breadcrumb" style="padding: 0.55rem 1rem;">
   <div id="getLiTry" style="margin:0px;width: 100%;" class="layui-tab" lay-filter="processTab" lay-allowclose="true">
     <ul id="getUlTry" class="layui-tab-title">
-      <li class="layui-this layui-this-select" lay-id="11" id="tabItemName">住房公积金业务</li>
+      <li class="layui-this layui-this-select" lay-id="11" id="tabItemName">流程管理</li>
 
     </ul>
   </div>
@@ -182,6 +185,12 @@
   {{#  }else { }}
   <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="passwordReset">重置密码</a>
   {{#  } }}
+</script>
+<script type="text/html" id="barDemo14">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="updateListAjax">修改</a>
+</script>
+<script type="text/html" id="barDemo15">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="deleteListAjax">删除</a>
 </script>
 <footer class="app-footer">
 <span><a href="">流程中心</a> &copy; 2017 制作.</span>
@@ -261,8 +270,57 @@ $("#getLiTry ul").on("click","li", function() {
         });
 });
 });
+$("#listParent").on("click","li", function() {
+//    console.log(node)
+    var layid = $(this).attr("lay-id-temp");
+    tabKey = $(this).attr("id-temp");
+    var liName = $(this).attr("name-temp");
+//    alert(tabKey+liName)
+    $("#tabItemName").html(liName);
+    $("#tabItemName").attr("lay-id",layid);
+    $('.layui-tab-title li').each(function(){
+        $(this).removeClass('layui-this');
+    });
+    $("#tabItemName").addClass('layui-this');
+    $("#loadDataTables").show();
+    $("#loadDataRule").hide();
+    $("#loadDataColor").hide();
+    $("#loadPermission").hide();
+    $("#loadList").hide();
+    processDesignAjax()
+});
 
 window.onload = function(){
+    function getListNameAjax() {
+        $.ajax({
+            url : '/bpm/business/getAllCategory?keyword=',
+            type : "GET",
+            timeout : 10000,
+            cache : false,
+            beforeSend :function(xmlHttp){
+                xmlHttp.setRequestHeader("If-Modified-Since","0");
+                xmlHttp.setRequestHeader("Cache-Control","no-cache");
+            },
+            success : function(result) {
+                var lists =  result.data;
+                $("#tabItemName").html(lists[0].name);
+                for(var i=0;i<lists.length;i++){
+                    var txt="<li id=\""+lists[i].category+"Temp"+"\"  lay-id-temp=\""+(100+i)+"\" name-temp=\""+lists[i].name+"\" id-temp=\""+lists[i].category+"\" class=\"nav-item\">\n" +
+                        "            <a style=\"margin-left: 9px;\" id=\""+lists[i].category+"\" class=\"nav-link site-demo-active\" data-type=\"tabAdd\" href=\"components/tables.html\" lay-id=\""+(100+i)+"\"><i class=\"icon-pin\"></i>"+lists[i].name+"</a>\n" +
+                        "        </li>";
+                    $("#listParent").append(txt)
+                }
+//                var idtemp = lists[0].category+"Temp";
+//                console.log(idtemp)
+                tabKey = lists[0].category;
+                processDesignAjax()
+            },
+            error : function(result) {
+                console.log("空列表");
+            }
+        });
+    }
+    getListNameAjax();
     function getUserNameAjax() {
         $.ajax({
             url : '/bpm/manager/models/query_Models?key='+tabKey+'&keyword=&_=1512374250213&page=1&limit=1',
@@ -380,7 +438,26 @@ function processDesignAjax() {
     });
 };
 //火狐浏览器首次加载会失效 这里添加一个加载 坏处是首次就加载了两遍了；
-//processDesignAjax();
+function ListAjax() {
+      layui.use('table', function(){
+          var table = layui.table;
+          table.render({
+              elem: '#loadListTableModel'
+              ,url:'/bpm/business/getAllCategory?keyword='
+              ,response: {
+//                  countName: 'totalNumber', //数据总数的字段名称，默认：count
+                  dataName: 'data' //数据列表的字段名称，默认：data
+              }
+              ,cols: [[
+                  {type:'checkbox'}
+                  ,{field:'name', title: '菜单名称',align:'center', sort: true}
+                  ,{field:'category', title: '业务代码',align:'center', sort: false}
+                  ,{field:'tenantId', title: '中心编码',align:'center', sort: false}
+              ]]
+              ,page: false
+          });
+      });
+  };
 function permissionAjax() {
       layui.use('table', function(){
           var table = layui.table;
@@ -2130,7 +2207,7 @@ function clearStartModal() {
                                   btn: ['明白了']
                               });
                           });
-                          DefineModalReflash();
+                          StartModalReflash();
                       }else {
                           layui.use('layer', function(){
                               var $ = layui.jquery, layer = layui.layer;
@@ -2471,6 +2548,7 @@ if(delItems.length==1){
       $("#"+idtemp).css("background","#62d6d1");
       colorTempOne = idtemp;
   };
+
   function sendColor1(url, type, params) {
      $("#colorClearId1").children("tr").css("background","");
       var idtemp = event.target.id.split("#")[0];
@@ -2557,6 +2635,292 @@ function modifydanqianjiedianAjax(url, type, params) {
   //刷新 111
   function loadDataColorReflash() {
       loadDataColorAjax();
+  }
+
+  //获取勾选项 111
+  function selectListModal() {
+      var resultItems = [];
+      layui.use('table', function(){
+          var table = layui.table;
+          var checkStatus = table.checkStatus('loadListTableModel');
+          resultItems = checkStatus.data;
+      });
+      return resultItems;
+  }
+  //搜索 111
+  function fiterListModal() {
+      layui.use('table', function(){
+          var table = layui.table;
+          var fiterName = $("#selectListTable").val();
+          table.reload('loadListTableModel', {
+              where: {
+                  keyword: fiterName
+              }
+              ,url: '/bpm/business/getAllCategory?key='+tabKey+'&_=1512374250213'
+          });
+      })
+  };
+  //清空搜索 111
+  function clearListModal() {
+      layui.use('table', function(){
+          var table = layui.table;
+          $("#selectListTable").val("");
+          table.reload('loadListTableModel', {
+              where: {
+                  keyword: ""
+              }
+              ,url: '/bpm/business/getAllCategory?key='+tabKey+'&_=1512374250213'
+          });
+      })
+  };
+  //修改菜单 111
+  function updateListAjaxBefore() {
+      var delItems = selectListModal();
+      if(delItems==""||delItems==null||delItems==undefined){
+          layui.use('layer', function(){
+              var $ = layui.jquery, layer = layui.layer;
+              layer.msg('请先选择要修改的导航菜单', {
+                  time: 20000,
+                  btn: ['明白了']
+              });
+          });
+          return;
+      }
+      if(delItems.length>1){
+          layui.use('layer', function(){
+              var $ = layui.jquery, layer = layui.layer;
+              layer.msg('一次只能操作一条数据', {
+                  time: 20000,
+                  btn: ['明白了']
+              });
+          });
+          return;
+      }else {
+          $("#updateListTempId1").click();
+      }
+  };
+  //修改菜单 111
+  function updateListAjax() {
+//        alert($("#newProcessName").val()+$("#newProcessDes").val())
+      if($("#updateListName").val()==""||$("#updateListName").val()==null||$("#updateListName").val()==undefined){
+          layui.use('layer', function(){
+              var $ = layui.jquery, layer = layui.layer;
+              layer.msg('菜单名称不能为空', {
+                  time: 20000,
+                  btn: ['明白了']
+              });
+          });
+          return;
+      }
+      if($("#updateListCategory").val()==""||$("#updateListCategory").val()==null||$("#updateListCategory").val()==undefined){
+          layui.use('layer', function(){
+              var $ = layui.jquery, layer = layui.layer;
+              layer.msg('业务代码不能为空', {
+                  time: 20000,
+                  btn: ['明白了']
+              });
+          });
+          return;
+      }
+      var params = {"name":$("#updateListName").val(),"category":$("#updateListCategory").val()};
+      $.ajax({
+          url : "/bpm/business/updateCategory",
+          data : params,
+          type : "post",
+          timeout : 10000,
+          cache : false,
+          beforeSend :function(xmlHttp){
+              xmlHttp.setRequestHeader("If-Modified-Since","0");
+              xmlHttp.setRequestHeader("Cache-Control","no-cache");
+          },
+          success : function(result) {
+              if (result.success == true) {
+                  $("#updateListTempId1").click();
+                  layui.use('layer', function(){
+                      var $ = layui.jquery, layer = layui.layer;
+                      layer.msg('修改成功', {
+                          time: 20000,
+                          btn: ['明白了']
+                      });
+                  });
+                  listModalReflash();
+              }else {
+                  layui.use('layer', function(){
+                      var $ = layui.jquery, layer = layui.layer;
+                      layer.msg('修改失败，错误信息：'+result.msg, {
+                          time: 20000,
+                          btn: ['明白了']
+                      });
+                  });
+              }
+          },
+          error : function(result) {
+              layui.use('layer', function(){
+                  var $ = layui.jquery, layer = layui.layer;
+                  layer.msg('error', {
+                      time: 20000,
+                      btn: ['明白了']
+                  });
+              });
+          }
+      });
+//        ProcessModalReflash();
+  };
+  //新建菜单 111
+  function newListAjax() {
+//        alert($("#newProcessName").val()+$("#newProcessDes").val())
+      if($("#newListName").val()==""||$("#newListName").val()==null||$("#newListName").val()==undefined){
+          layui.use('layer', function(){
+              var $ = layui.jquery, layer = layui.layer;
+              layer.msg('菜单名称不能为空', {
+                  time: 20000,
+                  btn: ['明白了']
+              });
+          });
+          return;
+      }
+      if($("#newListCategory").val()==""||$("#newListCategory").val()==null||$("#newListCategory").val()==undefined){
+          layui.use('layer', function(){
+              var $ = layui.jquery, layer = layui.layer;
+              layer.msg('业务代码不能为空', {
+                  time: 20000,
+                  btn: ['明白了']
+              });
+          });
+          return;
+      }
+      var params = {"name":$("#newListName").val(),"category":$("#newListCategory").val()};
+      $.ajax({
+          url : "/bpm/business/addCategory",
+          data : params,
+          type : "post",
+          timeout : 10000,
+          cache : false,
+          beforeSend :function(xmlHttp){
+              xmlHttp.setRequestHeader("If-Modified-Since","0");
+              xmlHttp.setRequestHeader("Cache-Control","no-cache");
+          },
+          success : function(result) {
+              if (result.success == true) {
+                  $("#addListTempId1").click();
+                  layui.use('layer', function(){
+                      var $ = layui.jquery, layer = layui.layer;
+                      layer.msg('新建成功', {
+                          time: 20000,
+                          btn: ['明白了']
+                      });
+                  });
+                  listModalReflash();
+              }else {
+                  layui.use('layer', function(){
+                      var $ = layui.jquery, layer = layui.layer;
+                      layer.msg('新建失败，错误信息：'+result.msg, {
+                          time: 20000,
+                          btn: ['明白了']
+                      });
+                  });
+              }
+          },
+          error : function(result) {
+              layui.use('layer', function(){
+                  var $ = layui.jquery, layer = layui.layer;
+                  layer.msg('error', {
+                      time: 20000,
+                      btn: ['明白了']
+                  });
+              });
+          }
+      });
+//        ProcessModalReflash();
+  };
+  //删除菜单 111
+  function deleteListAjax() {
+      var delItems = selectListModal();
+      if(delItems==""||delItems==null||delItems==undefined){
+          layui.use('layer', function(){
+              var $ = layui.jquery, layer = layui.layer;
+              layer.msg('请先选择要删除的导航菜单', {
+                  time: 20000,
+                  btn: ['明白了']
+              });
+          });
+          return;
+      }
+      if(delItems.length>1){
+          layui.use('layer', function(){
+              var $ = layui.jquery, layer = layui.layer;
+              layer.msg('一次只能操作一条数据', {
+                  time: 20000,
+                  btn: ['明白了']
+              });
+          });
+          return;
+      }else {
+          var paramsId ="";
+          var paramsName ="";
+          var paramsKey ="";
+          for(var i=0;i<delItems.length;i++) {
+              if (i == 0) {
+                  paramsId = paramsId + delItems[i].category;
+                  paramsName = paramsName + delItems[i].name;
+                  paramsKey = paramsKey + delItems[i].tenantId;
+              } else {
+                  paramsId = paramsId + ";"+ delItems[i].category ;
+                  paramsName = paramsName +  ";"+ delItems[i].name;
+                  paramsKey = paramsKey +  ";"+ delItems[i].tenantId;
+              }
+          }
+          var  params = {
+              "category":paramsId,
+              "name":paramsName,
+              "tenantId":paramsKey
+          }
+          $.ajax({
+              url : "/bpm/business/deleteCategory",
+              data : params,
+              type : "POST",
+              timeout : 10000,
+              cache : false,
+              beforeSend :function(xmlHttp){
+                  xmlHttp.setRequestHeader("If-Modified-Since","0");
+                  xmlHttp.setRequestHeader("Cache-Control","no-cache");
+              },
+              success : function(result) {
+                  if (result.success == true) {
+                      layui.use('layer', function(){
+                          var $ = layui.jquery, layer = layui.layer;
+                          layer.msg('删除成功', {
+                              time: 20000,
+                              btn: ['明白了']
+                          });
+                      });
+                      listModalReflash();
+                  }else {
+                      layui.use('layer', function(){
+                          var $ = layui.jquery, layer = layui.layer;
+                          layer.msg('删除失败，错误信息：'+result.msg, {
+                              time: 20000,
+                              btn: ['明白了']
+                          });
+                      });
+                  }
+              },
+              error : function(result) {
+                  layui.use('layer', function(){
+                      var $ = layui.jquery, layer = layui.layer;
+                      layer.msg('error', {
+                          time: 20000,
+                          btn: ['明白了']
+                      });
+                  });
+              }
+          });
+      }
+  };
+  //刷新 111
+  function listModalReflash() {
+      ListAjax();
+      $("#selectListTable").val("");
   }
 
   //流程编辑
@@ -2944,122 +3308,6 @@ function modifydanqianjiedianAjax(url, type, params) {
     });
 });
 
-$("#tabItemName").on('click',function(){
-//    $("#tabItemName").attr("lay-id");
-    if($(this).attr("lay-id")==444){
-        $('#processDesignAjaxMain1').click();
-    }else if($(this).attr("lay-id")==55){
-        $('#processDesignAjaxMain2').click();
-    }else if($(this).attr("lay-id")==66){
-        $('#processDesignAjaxMain3').click();
-    }else if($(this).attr("lay-id")==77){
-        $('#processDesignAjaxMain4').click();
-    }else if($(this).attr("lay-id")==88){
-        $('#processDesignAjaxMain5').click();
-    }else if($(this).attr("lay-id")==99){
-        $('#processDesignAjaxMain6').click();
-    }else if($(this).attr("lay-id")==11){
-        $('#processDesignAjaxMain').click();
-    }else {
-        return
-    }
-});
-$('#processDesignAjaxMain').on('click', function(){
-     tabKey = "hfb";
-     $("#tabItemName").html("住房公积金业务");
-     $("#tabItemName").attr("lay-id","11");
-    $('.layui-tab-title li').each(function(){
-            $(this).removeClass('layui-this');
-    });
-     $("#tabItemName").addClass('layui-this');
-
-});
-$('#processDesignAjaxMain4').on('click', function(){
-     tabKey = "gjyw";
-     $("#tabItemName").html("归集业务");
-     $("#tabItemName").attr("lay-id","77");
-    $('.layui-tab-title li').each(function(){
-            $(this).removeClass('layui-this');
-    });
-     $("#tabItemName").addClass('layui-this');
-    $("#loadDataTables").show();
-    $("#loadDataRule").hide();
-    $("#loadDataColor").hide();
-    $("#loadPermission").hide();
-    processDesignAjax()
-});
-$('#processDesignAjaxMain5').on('click', function(){
-     tabKey = "tqyw";
-     $("#tabItemName").html("提取业务");
-     $("#tabItemName").attr("lay-id","88");
-    $('.layui-tab-title li').each(function(){
-            $(this).removeClass('layui-this');
-    });
-     $("#tabItemName").addClass('layui-this');
-    $("#loadDataTables").show();
-    $("#loadDataRule").hide();
-    $("#loadDataColor").hide();
-    $("#loadPermission").hide();
-    processDesignAjax()
-});
-$('#processDesignAjaxMain6').on('click', function(){
-     tabKey = "grdk";
-     $("#tabItemName").html("个人贷款");
-     $("#tabItemName").attr("lay-id","99");
-    $('.layui-tab-title li').each(function(){
-            $(this).removeClass('layui-this');
-    });
-     $("#tabItemName").addClass('layui-this');
-    $("#loadDataTables").show();
-    $("#loadDataRule").hide();
-    $("#loadDataColor").hide();
-    $("#loadPermission").hide();
-    processDesignAjax()
-});
-$('#processDesignAjaxMain1').on('click', function(){
-     tabKey = "im";
-    $("#tabItemName").html("资金管理业务");
-    $("#tabItemName").attr("lay-id","444");
-    $('.layui-tab-title li').each(function(){
-        $(this).removeClass('layui-this');
-    });
-//    $("#tabItemName1").show();
-//    $("#tabItemName2").hide();
-//    $("#tabItemName3").hide();
-//    $("#tabItemName").hide();
-
-    $("#tabItemName").addClass('layui-this');
-//    $("#loadDataTables").show();
-//    $("#loadDataRule").hide();
-//    $("#loadDataColor").hide();
-//    $("#getData1").click();
-});
-$('#processDesignAjaxMain2').on('click', function(){
-     tabKey = "archive";
-    $("#tabItemName").html("电子档案业务");
-    $("#tabItemName").attr("lay-id","55");
-    $('.layui-tab-title li').each(function(){
-        $(this).removeClass('layui-this');
-    });
-    $("#tabItemName").addClass('layui-this');
-//    $("#loadDataTables").show();
-//    $("#loadDataRule").hide();
-//    $("#loadDataColor").hide();
-//    $("#getData1").click();
-});
-$('#processDesignAjaxMain3').on('click', function(){
-     tabKey = "fm";
-    $("#tabItemName").html("财务管理业务");
-    $("#tabItemName").attr("lay-id","66");
-    $('.layui-tab-title li').each(function(){
-        $(this).removeClass('layui-this');
-    });
-    $("#tabItemName").addClass('layui-this');
-//    $("#loadDataTables").show();
-//    $("#loadDataRule").hide();
-//    $("#loadDataColor").hide();
-//    $("#getData1").click();
-});
 
   function passwordChang() {
       $.ajax({

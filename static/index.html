@@ -61,16 +61,25 @@
           <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-puzzle"></i> 流程管理</a>
           <ul class="nav-dropdown-items">
             <li class="nav-item">
-              <a style="" id="processDesignAjaxMain" class="nav-link site-demo-active" data-type="tabAdd" href="components/tables.html" lay-id="11"><i class="icon-pin"></i>住房公积金业务</a>
+              <a style="margin-left: 9px;" id="processDesignAjaxMain" class="nav-link site-demo-active" data-type="tabAdd" href="components/tables.html" lay-id="11"><i class="icon-pin"></i>住房公积金业务</a>
             </li>
             <li class="nav-item">
-              <a style="" id="processDesignAjaxMain1" class="nav-link "  href="components/tables.html" lay-id="44"><i class="icon-pin"></i>资金管理</a>
+              <a style="margin-left: 9px;" id="processDesignAjaxMain4" class="nav-link " href="components/tables.html" lay-id="77"><i class="icon-pin"></i>归集业务</a>
             </li>
             <li class="nav-item">
-              <a style="" id="processDesignAjaxMain2" class="nav-link "  href="components/tables.html" lay-id="55"><i class="icon-pin"></i>电子档案</a>
+              <a style="margin-left: 9px;" id="processDesignAjaxMain5" class="nav-link "  href="components/tables.html" lay-id="88"><i class="icon-pin"></i>提取业务</a>
             </li>
             <li class="nav-item">
-              <a style="" id="processDesignAjaxMain3" class="nav-link "  href="components/tables.html" lay-id="66"><i class="icon-pin"></i>财务管理</a>
+              <a style="margin-left: 9px;" id="processDesignAjaxMain6" class="nav-link "  href="components/tables.html" lay-id="99"><i class="icon-pin"></i>贷款业务</a>
+            </li>
+            <li class="nav-item">
+              <a style="margin-left: 9px;" id="processDesignAjaxMain1" class="nav-link "  href="components/tables.html" lay-id="444"><i class="icon-pin"></i>资金管理</a>
+            </li>
+            <li class="nav-item">
+              <a style="margin-left: 9px;" id="processDesignAjaxMain2" class="nav-link "  href="components/tables.html" lay-id="55"><i class="icon-pin"></i>电子档案</a>
+            </li>
+            <li class="nav-item">
+              <a style="margin-left: 9px;" id="processDesignAjaxMain3" class="nav-link "  href="components/tables.html" lay-id="66"><i class="icon-pin"></i>财务管理</a>
             </li>
           </ul>
         </li>
@@ -2910,12 +2919,20 @@
 
     $("#tabItemName").on('click',function(){
 //    $("#tabItemName").attr("lay-id");
-        if($(this).attr("lay-id")==44){
+        if($(this).attr("lay-id")==444){
             $('#processDesignAjaxMain1').click();
         }else if($(this).attr("lay-id")==55){
             $('#processDesignAjaxMain2').click();
         }else if($(this).attr("lay-id")==66){
             $('#processDesignAjaxMain3').click();
+        }else if($(this).attr("lay-id")==77){
+            $('#processDesignAjaxMain4').click();
+        }else if($(this).attr("lay-id")==88){
+            $('#processDesignAjaxMain5').click();
+        }else if($(this).attr("lay-id")==99){
+            $('#processDesignAjaxMain6').click();
+        }else if($(this).attr("lay-id")==11){
+            $('#processDesignAjaxMain').click();
         }else {
             return
         }
@@ -2930,10 +2947,52 @@
         $("#tabItemName").addClass('layui-this');
 
     });
+    $('#processDesignAjaxMain4').on('click', function(){
+        tabKey = "gjyw";
+        $("#tabItemName").html("归集业务");
+        $("#tabItemName").attr("lay-id","77");
+        $('.layui-tab-title li').each(function(){
+            $(this).removeClass('layui-this');
+        });
+        $("#tabItemName").addClass('layui-this');
+        $("#loadDataTables").show();
+        $("#loadDataRule").hide();
+        $("#loadDataColor").hide();
+        $("#loadPermission").hide();
+        processDesignAjax()
+    });
+    $('#processDesignAjaxMain5').on('click', function(){
+        tabKey = "tqyw";
+        $("#tabItemName").html("提取业务");
+        $("#tabItemName").attr("lay-id","88");
+        $('.layui-tab-title li').each(function(){
+            $(this).removeClass('layui-this');
+        });
+        $("#tabItemName").addClass('layui-this');
+        $("#loadDataTables").show();
+        $("#loadDataRule").hide();
+        $("#loadDataColor").hide();
+        $("#loadPermission").hide();
+        processDesignAjax()
+    });
+    $('#processDesignAjaxMain6').on('click', function(){
+        tabKey = "dkyw";
+        $("#tabItemName").html("贷款业务");
+        $("#tabItemName").attr("lay-id","99");
+        $('.layui-tab-title li').each(function(){
+            $(this).removeClass('layui-this');
+        });
+        $("#tabItemName").addClass('layui-this');
+        $("#loadDataTables").show();
+        $("#loadDataRule").hide();
+        $("#loadDataColor").hide();
+        $("#loadPermission").hide();
+        processDesignAjax()
+    });
     $('#processDesignAjaxMain1').on('click', function(){
         tabKey = "im";
         $("#tabItemName").html("资金管理业务");
-        $("#tabItemName").attr("lay-id","44");
+        $("#tabItemName").attr("lay-id","444");
         $('.layui-tab-title li').each(function(){
             $(this).removeClass('layui-this');
         });

@@ -124,25 +124,36 @@ if ($.ajaxLoad) {
           $("#loadDataRule").hide();
           $("#loadDataColor").hide();
           $("#loadPermission").hide();
+          $("#loadList").hide();
           $("#getData1").click();
       }else if(getActive=="loadDataRuleAjaxMain"){
           $("#loadDataTables").hide();
           $("#loadDataRule").show();
           $("#loadDataColor").hide();
           $("#loadPermission").hide();
+          $("#loadList").hide();
           $("#getData2").click();
       }else if(getActive=="loadDataColorAjax"){
           $("#loadDataTables").hide();
           $("#loadDataRule").hide();
           $("#loadDataColor").show();
           $("#loadPermission").hide();
+          $("#loadList").hide();
           $("#getData3").click();
       }else if(getActive=="permissionAjaxMain"){
           $("#loadDataTables").hide();
           $("#loadDataRule").hide();
           $("#loadDataColor").hide();
           $("#loadPermission").show();
+          $("#loadList").hide();
           $("#getData4").click();
+      }else if(getActive=="listAjaxMain"){
+          $("#loadDataTables").hide();
+          $("#loadDataRule").hide();
+          $("#loadDataColor").hide();
+          $("#loadPermission").hide();
+          $("#loadList").show();
+          $("#getData5").click();
       }else {
           return;
       }
